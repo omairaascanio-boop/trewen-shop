@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREWEN SHOP - Un estilo, mil formas de ser tú</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .clover-icon {
+            width: 40px;
+            height: 40px;
+            fill: #10b981;
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            border-color: #10b981;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <!-- Logo de TREWEN SHOP -->
+                    <div id="logoContainer" class="flex items-center space-x-3">
+                        <img src="https://drive.google.com/thumbnail?id=15duV6u3_kl-qSPlS5Q31jLVS7DSDlrPO&sz=w200"
+                            alt="TREWEN SHOP Logo" class="h-16 w-auto">
+                        <div>
+                            <div>
+                                <h1 class="text-2xl font-bold text-gray-800">TREWEN SHOP</h1>
+                                <p class="text-sm text-green-600 font-medium">Un estilo, mil formas de ser tú</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#inicio"
+                            class="text-gray-700 hover:text-green-600 font-medium transition-colors">Inicio</a>
+                        <a href="#video"
+                            class="text-gray-700 hover:text-green-600 font-medium transition-colors">Video</a>
+                        <a href="#productos"
+                            class="text-gray-700 hover:text-green-600 font-medium transition-colors">Productos</a>
+                        <a href="#nosotros"
+                            class="text-gray-700 hover:text-green-600 font-medium transition-colors">Nosotros</a>
+                        <a href="#contacto"
+                            class="text-gray-700 hover:text-green-600 font-medium transition-colors">Contacto</a>
+                    </div>
+
+                    <button id="menuBtn" class="md:hidden text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                    <a href="#inicio" class="block py-2 text-gray-700 hover:text-green-600">Inicio</a>
+                    <a href="#video" class="block py-2 text-gray-700 hover:text-green-600">Video</a>
+                    <a href="#productos" class="block py-2 text-gray-700 hover:text-green-600">Productos</a>
+                    <a href="#nosotros" class="block py-2 text-gray-700 hover:text-green-600">Nosotros</a>
+                    <a href="#contacto" class="block py-2 text-gray-700 hover:text-green-600">Contacto</a>
+                </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="fade-in">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">TREWEN SHOP</h2>
+                <p class="text-xl md:text-2xl mb-4 font-light">Un estilo, mil formas de ser tú</p>
+                <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+                    Ropa unisex moderna, cómoda y versátil. Eliminamos las etiquetas de género en la moda.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('video')"
+                        class="bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover-scale hover:shadow-xl transition-all">
+                        Ver Nuestro Video
+                    </button>
+                    <button onclick="scrollToSection('productos')"
+                        class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-green-600 transition-all">
+                        Explorar Productos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Conoce Nuestra Historia</h3>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Descubre la pasión y dedicación detrás de TREWEN SHOP en nuestro video de presentación
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative bg-gray-100 rounded-2xl overflow-hidden shadow-2xl">
+                    <div id="youtubeContainer" class="video-container">
+                        <iframe id="youtubeVideo"
+                            src="https://drive.google.com/file/d/15XG0HwF9FNkbGMRm3VbN71LAFKsFUT_t/preview"
+                            class="w-full aspect-video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- organigrama Section -->
+    <section id="organigrama" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 flex flex-col sm:flex-row gap-4 justify-center shadow-xl">
+
+                <img src="https://i.imgur.com/uh8293t.png"
+                    alt="TREWEN SHOP Orga" class="mx-auto max-w-xl w-full" />
+                <!--
+          mx-auto = centra horizontalmente
+          w-80/md:w-96/lg:w-[32rem] = control de ancho en distintas pantallas
+        -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Productos Section -->
+    <section id="productos" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Nuestros Productos</h3>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Descubre nuestra colección de ropa unisex diseñada para expresar tu personalidad única
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Camisetas -->
+                <div class="product-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">👕</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Camisetas</h4>
+                    <p class="text-gray-600 mb-4">Básicas y estampadas para todos los estilos</p>
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors">
+                        Ver Más
+                    </button>
+                </div>
+
+                <!-- Sudaderas -->
+                <div class="product-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🧥</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Sudaderas</h4>
+                    <p class="text-gray-600 mb-4">Hoodies cómodos para cualquier ocasión</p>
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors">
+                        Ver Más
+                    </button>
+                </div>
+
+                <!-- Pantalones -->
+                <div class="product-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">👖</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Pantalones</h4>
+                    <p class="text-gray-600 mb-4">Joggers, jeans, cargo y casuales</p>
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors">
+                        Ver Más
+                    </button>
+                </div>
+
+                <!-- Accesorios -->
+                <div class="product-card bg-white rounded-xl p-6 text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🧢</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Accesorios</h4>
+                    <p class="text-gray-600 mb-4">Gorras, relojes y gafas</p>
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors">
+                        Ver Más
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-6">Sobre TREWEN SHOP</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-600 mb-2">Nuestra Historia</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                <strong>TRE</strong> viene del trébol de cuatro hojas, símbolo de suerte, esperanza y
+                                crecimiento, inspirado en el núcleo familiar de 4 personas. <strong>WEN</strong> es un
+                                homenaje a un ser querido que motiva e inspira la creación de la marca.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-600 mb-2">Misión</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                Brindar ropa que represente libertad y diversidad, eliminando etiquetas de género en la
+                                moda y apostando por un estilo que se adapte a cualquier persona.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-600 mb-2">Visión</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                Consolidarnos como una marca reconocida en el mercado digital de la moda unisex en
+                                Colombia y Latinoamérica, destacándonos por calidad, accesibilidad y cercanía con
+                                nuestros clientes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-xl">
+                        <img src="https://drive.google.com/thumbnail?id=15duV6u3_kl-qSPlS5Q31jLVS7DSDlrPO&sz=w200"
+                            alt="TREWEN SHOP Logo" class="h-16 w-auto mx-auto block mb-4">
+
+                        <h4 class="text-2xl font-bold text-gray-800 mb-2">Símbolo de Suerte</h4>
+                        <p class="text-gray-600">
+                            El trébol de cuatro hojas representa nuestra esperanza y crecimiento continuo
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Nuestros Servicios</h3>
+                <p class="text-xl text-gray-600">Más que una tienda, una experiencia personalizada</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💬</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Asesoría Virtual</h4>
+                    <p class="text-gray-600">Consultoría personalizada para encontrar tu estilo perfecto</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎨</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Personalización</h4>
+                    <p class="text-gray-600">Posibilidad de personalizar prendas según tus gustos</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🚚</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Envíos Nacionales</h4>
+                    <p class="text-gray-600">Entregas rápidas y seguras en todo Colombia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-4">¡Conecta con Nosotros!</h3>
+                <p class="text-xl opacity-90">Síguenos en redes sociales y mantente al día con las últimas tendencias
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 hover-scale">
+                    <div
+                        class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">WhatsApp Business</h4>
+                    <p class="opacity-90 mb-4">Atención personalizada y pedidos directos</p>
+                    <button
+                        class="bg-white text-green-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        Contactar
+                    </button>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 hover-scale">
+                    <div
+                        class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Instagram</h4>
+                    <p class="opacity-90 mb-4">Descubre nuestro catálogo visual</p>
+                    <button
+                        class="bg-white text-green-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        Seguir
+                    </button>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 hover-scale">
+                    <div
+                        class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-4.59v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005.76 20.5a6.34 6.34 0 003.14-12.44V6.5a6.77 6.77 0 002.59 2.23v-4.3a4.85 4.85 0 01-2.59-2.23c-.13-.26-.25-.53-.35-.81H12v.81a4.87 4.87 0 007.59 3.69z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">TikTok</h4>
+                    <p class="opacity-90 mb-4">Tendencias y contenido divertido</p>
+                    <button
+                        class="bg-white text-green-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        Ver Videos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- organigrama Section -->
+    <section id="tarjeta" class="py-20 bg-gray-50 shadow-xl">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 flex flex-col sm:flex-row gap-4 justify-center ">
+
+                <img src="https://i.imgur.com/JLxlj6q.png"
+                    alt="Tarjeta" class="mx-auto w-80 md:w-20 lg:w-[20rem]" />
+                <!--
+          mx-auto = centra horizontalmente
+          w-80/md:w-96/lg:w-[32rem] = control de ancho en distintas pantallas
+        -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://drive.google.com/thumbnail?id=15duV6u3_kl-qSPlS5Q31jLVS7DSDlrPO&sz=w200"
+                            alt="TREWEN SHOP Logo" class="h-16 w-auto">
+                        <h4 class="text-xl font-bold">TREWEN SHOP</h4>
+                    </div>
+                    <p class="text-gray-300 mb-2">Un estilo, mil formas de ser tú</p>
+                    <p class="text-gray-400 text-sm">Moda unisex moderna y versátil para todos</p>
+                </div>
+
+                <div>
+                    <h5 class="font-semibold mb-4">Enlaces Rápidos</h5>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#inicio" class="hover:text-green-400 transition-colors">Inicio</a></li>
+                        <li><a href="#video" class="hover:text-green-400 transition-colors">Video</a></li>
+                        <li><a href="#productos" class="hover:text-green-400 transition-colors">Productos</a></li>
+                        <li><a href="#nosotros" class="hover:text-green-400 transition-colors">Nosotros</a></li>
+                        <li><a href="#contacto" class="hover:text-green-400 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-semibold mb-4">Información</h5>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>📍 Tienda Virtual</li>
+                        <li>🚚 Envíos a toda Colombia</li>
+                        <li>💳 Múltiples formas de pago</li>
+                        <li>🔄 Política de cambios</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 TREWEN SHOP. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // YouTube video loader
+        function loadYouTubeVideo() {
+            const urlInput = document.getElementById('youtubeUrl');
+            const url = urlInput.value.trim();
+
+            if (!url) {
+                alert('Por favor, ingresa un enlace de YouTube válido');
+                return;
+            }
+
+            // Extract video ID from YouTube URL
+            let videoId = '';
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+
+            if (match && match[2].length === 11) {
+                videoId = match[2];
+            } else {
+                alert('Por favor, ingresa un enlace de YouTube válido');
+                return;
+            }
+
+            // Hide placeholder and show video
+            document.getElementById('videoPlaceholder').classList.add('hidden');
+            document.getElementById('youtubeContainer').classList.remove('hidden');
+            document.getElementById('videoControls').classList.add('hidden');
+
+            // Set video source
+            const iframe = document.getElementById('youtubeVideo');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0&modestbranding=1`;
+
+            // Add reset button
+            const videoSection = document.getElementById('video');
+            const resetButton = document.createElement('div');
+            resetButton.className = 'text-center mt-4';
+            resetButton.innerHTML = `
+                <button onclick="resetVideo()" class="text-green-600 hover:text-green-700 font-medium">
+                    Cambiar video
+                </button>
+            `;
+            videoSection.querySelector('.container').appendChild(resetButton);
+        }
+
+        // Reset video function
+        function resetVideo() {
+            document.getElementById('videoPlaceholder').classList.remove('hidden');
+            document.getElementById('youtubeContainer').classList.add('hidden');
+            document.getElementById('videoControls').classList.remove('hidden');
+            document.getElementById('youtubeUrl').value = '';
+
+            // Remove reset button
+            const resetButton = document.querySelector('#video button[onclick="resetVideo()"]');
+            if (resetButton) {
+                resetButton.parentElement.remove();
+            }
+        }
+
+        // Add smooth scrolling to all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'97c15518578531e0',t:'MTc1NzM2NDc3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
